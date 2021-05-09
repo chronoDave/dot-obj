@@ -1,4 +1,4 @@
-export default (object: Record<string, unknown>, path: string, value: unknown) => {
+export default (object: { [key: string]: unknown }, path: string, value: any) => {
   const ref = object;
   const keys = path.split('.');
 
