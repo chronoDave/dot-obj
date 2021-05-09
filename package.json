@@ -1,5 +1,5 @@
 {
-  "name": "dot-obj",
+  "name": "@chrono/dot-obj",
   "version": "1.0.0",
   "description": "Get or set nested object properties using doth paths",
   "main": "dist/dotobj.js",
