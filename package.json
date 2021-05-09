@@ -1,0 +1,48 @@
+{
+  "name": "dot-obj",
+  "version": "1.0.0",
+  "description": "Get or set nested object properties using doth paths",
+  "main": "dist/dotobj.js",
+  "types": "dist/dotobj.d.ts",
+  "keywords": [
+    "object",
+    "property",
+    "dot",
+    "path",
+    "get",
+    "set",
+    "nested"
+  ],
+  "files": [
+    "dist/**/*"
+  ],
+  "repository": "https://github.com/chronoDave/dot-obj.git",
+  "author": "Chronocide",
+  "license": "MIT",
+  "engines": {
+    "node": ">10.12.0"
+  },
+  "scripts": {
+    "lint": "eslint src",
+    "build": "rollup -c",
+    "test": "npm run build && tape test/**/*.spec.js",
+    "bench": "npm run build && node test/bench.js",
+    "prepublishOnly": "npm run build"
+  },
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^4.22.1",
+    "@typescript-eslint/parser": "^4.22.1",
+    "benchmark": "^2.1.4",
+    "esbuild": "^0.11.18",
+    "eslint": "^7.25.0",
+    "eslint-config-airbnb-typescript": "^12.3.1",
+    "eslint-plugin-import": "^2.22.1",
+    "lodash.get": "^4.4.2",
+    "lodash.set": "^4.3.2",
+    "rollup": "^2.47.0",
+    "rollup-plugin-dts": "^3.0.1",
+    "rollup-plugin-esbuild": "^4.2.3",
+    "tape": "^5.2.2",
+    "typescript": "^4.2.4"
+  }
+}
