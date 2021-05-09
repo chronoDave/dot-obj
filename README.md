@@ -1,11 +1,17 @@
 <div align="center">
-  <h1><code>.obj</code></h1>
+  <h1>@chronocide/dot-obj</h1>
   <p>Get or set (nested) object properties using doth paths.</p>
 </div>
 
 <div align="center">
   <a href="/LICENSE">
     <img alt="License MIT" src="https://img.shields.io/badge/license-MIT-blue.svg" />
+  </a>
+  <a href="https://www.npmjs.com/package/@chronocide/dot-obj">
+    <img alt="NPM" src="https://img.shields.io/npm/v/@chronocide/dot-obj?label=npm">
+  </a>
+  <a href="https://bundlephobia.com/result?p=@chronocide/dot-obj@latest">
+    <img alt="Bundle size" src="https://img.shields.io/bundlephobia/minzip/@chronocide/dot-obj@latest.svg">
   </a>
   <a href="https://github.com/chronoDave/dot-obj/actions/workflows/ci.yml">
     <img alt="CI" src="https://github.com/chronoDave/dot-obj/actions/workflows/ci.yml/badge.svg" />
