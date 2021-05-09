@@ -24,7 +24,7 @@
 ## Install
 
 ```
-$ npm i dot-obj
+$ npm i @chronocide/dot-obj
 ```
 
 _Note: This package requires Node >=10.12.0_
