@@ -1,6 +1,6 @@
 <div align="center">
   <h1>@chronocide/dot-obj</h1>
-  <p>Get or set (nested) object properties using doth paths.</p>
+  <p>JavaScript Object nested utility functions</p>
 </div>
 
 <div align="center">
@@ -31,6 +31,12 @@ _Note: This package requires Node >=10.12.0_
 
 ## Usage
 
+### `get()`
+
+Get nested property
+
+**Example**
+
 ```JS
 import dot from 'dot-obj';
 
@@ -39,11 +45,34 @@ dot.get({ foo: { bar: true } }, 'foo.bar') // => true
 dot.get({ foo: { bar: true } }, 'foo.bar.baz') // => undefined
 dot.get({ foo: { bar: true } }, 'bar') // => undefined
 dot.get({ foo: [{ bar: true }, { baz: false }] }, 'foo.0') // => { bar: true }
+```
+
+### `set()`
+
+Set nested property
+
+**Example**
+
+```JS
+import dot from 'dot-obj';
 
 // Set
 dot.set({ foo: { bar: true } }, 'foo', { baz: false }) // => { foo: { baz: false } }
 dot.set({ foo: { bar: true } }, 'foo.bar', { baz: false }) // => { foo: { bar: { baz: false } } }
 dot.set({ foo: { bar: true } }, 'baz', false) // => { foo: { bar: true }, baz: false }
+```
+
+### `some()`
+
+Test every nested property and return on first property that returns true
+
+```JS
+import dot from 'dot-obj';
+
+dot.some({ foo: { bar: true } }, ([key]) => key === 'foo') // true
+dot.some({ foo: { bar: true } }, ([key]) => key === 'baz') // false
+dot.some({ foo: { bar: true } }, ([, value]) => value === 'foo') // false
+dot.some({ foo: { bar: true } }, ([, value]) => value === true) // true
 ```
 
 ## Donating

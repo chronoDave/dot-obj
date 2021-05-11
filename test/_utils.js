@@ -25,6 +25,19 @@ const mockObjectNested = {
     a: mockObject,
     b: mockObject,
     c: mockObject
+  },
+  a: {
+    b: {
+      c: {
+        d: {
+          e: {
+            f: {
+              g: true
+            }
+          }
+        }
+      }
+    }
   }
 };
 

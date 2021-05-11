@@ -1,4 +1,6 @@
-export default (object: { [key: string]: unknown }, path: string): unknown => {
+import type { NestedObject } from './types';
+
+export default (object: NestedObject, path: string): unknown => {
   const keys = path.split('.');
 
   for (let i = 0; i < keys.length; i += 1) {
