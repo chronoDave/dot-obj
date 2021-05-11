@@ -1,7 +1,7 @@
 {
   "name": "@chronocide/dot-obj",
   "version": "1.1.0",
-  "description": "Get or set nested object properties using doth paths",
+  "description": "Utility functions for nested JavaScript Objects",
   "main": "dist/dotobj.js",
   "types": "dist/dotobj.d.ts",
   "keywords": [

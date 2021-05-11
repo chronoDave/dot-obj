@@ -1,6 +1,6 @@
 <div align="center">
   <h1>@chronocide/dot-obj</h1>
-  <p>JavaScript Object nested utility functions</p>
+  <p>Utility functions for nested JavaScript Objects</p>
 </div>
 
 <div align="center">
