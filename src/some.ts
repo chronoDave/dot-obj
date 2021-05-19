@@ -1,6 +1,4 @@
-import { NestedObject, Validator } from './types';
-
-export default (object: NestedObject, fn: Validator) => {
+export default <T extends Record<string, unknown>>(object: T, fn: (entries: [string, unknown]) => boolean) => {
   const stack = Object.entries(object);
 
   while (stack.length > 0) {
