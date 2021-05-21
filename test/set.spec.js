@@ -1,6 +1,6 @@
 const test = require('tape');
 
-const { set } = require('../dist/dotobj');
+const { set } = require('..');
 
 const { mockObject, mockObjectNested, mockArray } = require('./_utils');
 

@@ -1,6 +1,6 @@
 const test = require('tape');
 
-const { some } = require('../dist/dotobj');
+const { some } = require('..');
 
 test('[some] should return true if object has key or value, at any depth', t => {
   t.true(some({ a: 1 }, ([key]) => key === 'a'));
