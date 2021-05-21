@@ -12,9 +12,13 @@ export default [{
     })
   ],
   output: [{
-    file: outputFile('js'),
+    file: outputFile('cjs'),
     exports: 'auto',
     format: 'cjs',
+  }, {
+    file: outputFile('mjs'),
+    exports: 'auto',
+    format: 'es'
   }]
 }, {
   input,
