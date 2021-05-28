@@ -17,7 +17,7 @@
     <img alt="CI" src="https://github.com/chronoDave/dot-obj/actions/workflows/ci.yml/badge.svg" />
   </a>
   <a href="https://github.com/chronoDave/dot-obj/actions/workflows/codeql.yml">
-    <img alt="CodeQL" src="https://github.com/chronoDave/dot-obj/actions/workflows/codeql.yml/badge.svg?branch=master">
+    <img alt="CodeQL" src="https://github.com/chronoDave/dot-obj/actions/workflows/codeql.yml/badge.svg">
   </a>
 </div>
 
