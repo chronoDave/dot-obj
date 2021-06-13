@@ -1,6 +1,6 @@
 <div align="center">
   <h1>@chronocide/dot-obj</h1>
-  <p>Utility functions for nested JavaScript Objects</p>
+  <p>Strong-typed utility functions for nested JavaScript Objects</p>
 </div>
 
 <div align="center">
@@ -31,7 +31,7 @@ _Note: This package requires Node >=10.12.0_
 
 ## Usage
 
-### `get()`
+### `get<T>(object: Record<string, any>, path: string): T`
 
 Get nested property
 
@@ -45,9 +45,12 @@ dot.get({ foo: { bar: true } }, 'foo.bar') // => true
 dot.get({ foo: { bar: true } }, 'foo.bar.baz') // => undefined
 dot.get({ foo: { bar: true } }, 'bar') // => undefined
 dot.get({ foo: [{ bar: true }, { baz: false }] }, 'foo.0') // => { bar: true }
+
+// TS
+dot.get<boolean>({ foo: { bar: true } }, 'foo.bar') // => true (boolean)
 ```
 
-### `set()`
+### `set<T extends Record<string, any>>(object: Record<string, any>, path: string, value: any): T`
 
 Set nested property
 
@@ -60,9 +63,12 @@ import dot from 'dot-obj';
 dot.set({ foo: { bar: true } }, 'foo', { baz: false }) // => { foo: { baz: false } }
 dot.set({ foo: { bar: true } }, 'foo.bar', { baz: false }) // => { foo: { bar: { baz: false } } }
 dot.set({ foo: { bar: true } }, 'baz', false) // => { foo: { bar: true }, baz: false }
+
+// TS
+dot.set<{ foo: { baz: false } }>({ foo: { bar: true } }, 'foo', { baz: false }) // => { foo: { baz: false } } ({ foo: { baz: false } })
 ```
 
-### `some()`
+### `some(object: Record<string, any>, match: (entries: [string, any]) => boolean): boolean`
 
 Test every nested property and return on first property that returns true
 

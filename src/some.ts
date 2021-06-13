@@ -1,11 +1,11 @@
-export default <T extends Record<string, unknown>>(object: T, fn: (entries: [string, unknown]) => boolean) => {
+export default (object: Record<string, any>, match: (entries: [string, any]) => boolean) => {
   const stack = Object.entries(object);
 
   while (stack.length > 0) {
     const item = stack.pop();
 
     if (item) {
-      if (fn(item)) return true;
+      if (match(item)) return true;
 
       const [, value] = item;
       if (value && typeof value === 'object') {
