@@ -29,11 +29,20 @@ $ npm i @chronocide/dot-obj
 
 _Note: This package requires Node >=10.12.0_
 
+## Features
+
+ - `get()` - Get property at any depth
+ - `set()` - Set property at any depth
+ - `some()` - Test every property and return `true` on first property that returns `true`, otherwise `false`
+ - `every()` - Test every property and return `false` on first property that returns `false`, otherwise `true`
+
 ## Usage
 
-### `get<T>(object: Record<string, any>, path: string): T`
+### `get()`
 
-Get nested property
+`get<T>(object: Record<string, any>, path: string): T`
+
+Get property at any depth
 
 **Example**
 
@@ -50,9 +59,11 @@ dot.get({ foo: [{ bar: true }, { baz: false }] }, 'foo.0') // => { bar: true }
 dot.get<boolean>({ foo: { bar: true } }, 'foo.bar') // => true (boolean)
 ```
 
-### `set<T extends Record<string, any>>(object: Record<string, any>, path: string, value: any): T`
+### `set()`
 
-Set nested property
+`set<T extends Record<string, any>>(object: Record<string, any>, path: string, value: any): T`
+
+Set property at any depth
 
 **Example**
 
@@ -68,9 +79,11 @@ dot.set({ foo: { bar: true } }, 'baz', false) // => { foo: { bar: true }, baz: f
 dot.set<{ foo: { baz: false } }>({ foo: { bar: true } }, 'foo', { baz: false }) // => { foo: { baz: false } } ({ foo: { baz: false } })
 ```
 
-### `some(object: Record<string, any>, match: (entries: [string, any]) => boolean): boolean`
+### `some()`
 
-Test every nested property and return on first property that returns true
+`some(object: Record<string, any>, match: (entries: [string, any]) => boolean): boolean`
+
+Test every property and return `true` on first property that returns `true`, otherwise `false`
 
 ```JS
 import dot from 'dot-obj';
@@ -79,6 +92,33 @@ dot.some({ foo: { bar: true } }, ([key]) => key === 'foo') // true
 dot.some({ foo: { bar: true } }, ([key]) => key === 'baz') // false
 dot.some({ foo: { bar: true } }, ([, value]) => value === 'foo') // false
 dot.some({ foo: { bar: true } }, ([, value]) => value === true) // true
+```
+
+### `every()`
+
+`every(object: Record<string, any>, match: (entries: [string, any]) => boolean): boolean`
+
+Test every property and return `false` on first property that returns `false`, otherwise `true`
+
+```JS
+import dot from 'dot-obj';
+
+dot.every(
+  { foo: { bar: true } },
+  ([key]) => typeof key === 'string'
+) // true
+dot.every(
+  { foo: { bar: true } },
+  ([key]) => key === 'bar'
+) // false
+dot.every(
+  { foo: { bar: true }, baz: true },
+  ([key, value]) => key[0] === 'b' && value === true
+) // true
+dot.every(
+  { foo: { bar: true } },
+  ([, value]) => typeof value === 'boolean'
+) // false
 ```
 
 ## Donating
