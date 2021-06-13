@@ -1,6 +1,6 @@
 {
   "name": "@chronocide/dot-obj",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "description": "Utility functions for nested JavaScript Objects",
   "main": "dist/dotobj.cjs",
   "module": "dist/dotobj.mjs",
