@@ -1,4 +1,4 @@
-export default (object: Record<string, any>, match: (entries: [string, any]) => boolean) => {
+export default (object: Record<string, any>, match: (entries: [string, unknown]) => boolean) => {
   const stack = Object.entries(object);
 
   while (stack.length > 0) {
