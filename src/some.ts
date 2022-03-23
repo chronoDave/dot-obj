@@ -9,8 +9,7 @@ export default (object: Record<string, any>, match: (entries: [string, unknown])
 
       const [, value] = item;
       if (value && typeof value === 'object') {
-        const entries = Object.entries(value);
-        for (let i = 0; i < entries.length; i += 1) stack.push(entries[i]);
+        Object.entries(value).forEach(entry => stack.push(entry));
       }
     }
   }
